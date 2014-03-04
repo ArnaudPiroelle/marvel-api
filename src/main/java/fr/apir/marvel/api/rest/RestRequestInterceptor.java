@@ -1,4 +1,4 @@
-package fr.apir.marvel.api.interceptors;
+package fr.apir.marvel.api.rest;
 
 import fr.apir.marvel.api.util.MD5Util;
 import retrofit.RequestInterceptor;
@@ -24,8 +24,7 @@ public class RestRequestInterceptor implements RequestInterceptor {
         request.addHeader("Content-Type", "application/json");
 
         // Gestion de l'authentification (server-side)
-        String timestamp = new Date().toString();
-
+        String timestamp = String.valueOf(new Date().getTime());
 
         request.addEncodedQueryParam("apikey", apiKeyPublic);
         request.addEncodedQueryParam("ts", timestamp);

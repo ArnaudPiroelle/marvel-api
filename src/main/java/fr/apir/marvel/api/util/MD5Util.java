@@ -14,8 +14,8 @@ public class MD5Util {
             String toHash = timestamp + privateApiKey + publicApiKey;
             return new BigInteger(1, md.digest(toHash.getBytes())).toString(16);
         } catch (NoSuchAlgorithmException e) {
-            // TODO :Gestion de l'exception
         }
+
         return null;
     }
 }

@@ -15,19 +15,34 @@ import java.util.Map;
 public interface ComicsService {
 
     @GET("/v1/public/comics")
+    public DataWrapper<Comic> listComic();
+
+    @GET("/v1/public/comics")
     public DataWrapper<Comic> listComic(@QueryMap Map<String, String> options);
 
     @GET("/v1/public/comics/{comicId}")
     public DataWrapper<Comic> getComic(@Path("comicId") int comicId);
 
     @GET("/v1/public/comics/{comicId}/characters")
+    public DataWrapper<Character> getComicCharacters(@Path("comicId") int comicId);
+
+    @GET("/v1/public/comics/{comicId}/characters")
     public DataWrapper<Character> getComicCharacters(@Path("comicId") int comicId, @QueryMap Map<String, String> options);
+
+    @GET("/v1/public/comics/{comicId}/creators")
+    public DataWrapper<Creator> getComicCreators(@Path("comicId") int comicId);
 
     @GET("/v1/public/comics/{comicId}/creators")
     public DataWrapper<Creator> getComicCreators(@Path("comicId") int comicId, @QueryMap Map<String, String> options);
 
     @GET("/v1/public/comics/{comicId}/events")
+    public DataWrapper<Event> getComicEvents(@Path("comicId") int comicId);
+
+    @GET("/v1/public/comics/{comicId}/events")
     public DataWrapper<Event> getComicEvents(@Path("comicId") int comicId, @QueryMap Map<String, String> options);
+
+    @GET("/v1/public/comics/{comicId}/stories")
+    public DataWrapper<Story> getComicStories(@Path("comicId") int comicId);
 
     @GET("/v1/public/comics/{comicId}/stories")
     public DataWrapper<Story> getComicStories(@Path("comicId") int comicId, @QueryMap Map<String, String> options);
