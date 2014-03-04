@@ -1,7 +1,7 @@
 package fr.apir.marvel.api.services;
 
-import fr.apir.marvel.api.objects.*;
 import fr.apir.marvel.api.objects.Character;
+import fr.apir.marvel.api.objects.*;
 import fr.apir.marvel.api.objects.ref.DataWrapper;
 import retrofit.http.GET;
 import retrofit.http.Path;

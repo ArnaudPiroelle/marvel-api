@@ -1,7 +1,7 @@
 package fr.apir.marvel.api.services;
 
-import fr.apir.marvel.api.objects.*;
 import fr.apir.marvel.api.objects.Character;
+import fr.apir.marvel.api.objects.*;
 import fr.apir.marvel.api.objects.ref.DataWrapper;
 import retrofit.http.GET;
 import retrofit.http.Path;
@@ -15,7 +15,7 @@ import java.util.Map;
 public interface CharactersService {
 
     @GET("/v1/public/characters")
-    public DataWrapper<Character> listCharacters(@QueryMap Map<String, String> options);
+    public DataWrapper<Character> listCharacter(@QueryMap Map<String, String> options);
 
     @GET("/v1/public/characters/{characterId}")
     public DataWrapper<Character> getCharacter(@Path("characterId") int characterId);
