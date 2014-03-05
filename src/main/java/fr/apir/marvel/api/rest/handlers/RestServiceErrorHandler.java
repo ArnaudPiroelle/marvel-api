@@ -21,10 +21,14 @@ public class RestServiceErrorHandler implements ErrorHandler {
         if (r != null) {
             if (r.getStatus() == 401) {
                 return new AuthorizationException(data.getMessage(), cause);
-            } else if (r.getStatus() == 409) {
-                return new QueryException(data.getMessage(), cause);
+            } else if (r.getStatus() == 403) {
+                //TODO: Forbidden
             } else if (r.getStatus() == 404) {
                 return new EntityNotFoundException(data.getMessage(), cause);
+            } else if (r.getStatus() == 405) {
+                //TODO: Method Not Allowed
+            } else if (r.getStatus() == 409) {
+                return new QueryException(data.getMessage(), cause);
             } else if (r.getStatus() == 429) {
                 return new RateLimitException(data.getMessage(), cause);
             }
