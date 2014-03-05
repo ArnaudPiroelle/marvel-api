@@ -1,7 +1,9 @@
 package fr.apir.marvel.api.rest.handlers;
 
 import fr.apir.marvel.api.exceptions.AuthorizationException;
+import fr.apir.marvel.api.exceptions.EntityNotFoundException;
 import fr.apir.marvel.api.exceptions.QueryException;
+import fr.apir.marvel.api.exceptions.RateLimitException;
 import fr.apir.marvel.api.objects.ref.ErrorResponse;
 import retrofit.ErrorHandler;
 import retrofit.RetrofitError;
@@ -22,9 +24,9 @@ public class RestServiceErrorHandler implements ErrorHandler {
             } else if (r.getStatus() == 409) {
                 return new QueryException(data.getMessage(), cause);
             } else if (r.getStatus() == 404) {
-                //TODO: Ajout de la gestion de l'erreur 404 (entité n'existe pas)
+                return new EntityNotFoundException(data.getMessage(), cause);
             } else if (r.getStatus() == 429) {
-                //TODO: Ajout de la gestion de l'erreur 429 (RateLimit)
+                return new RateLimitException(data.getMessage(), cause);
             }
 
 
