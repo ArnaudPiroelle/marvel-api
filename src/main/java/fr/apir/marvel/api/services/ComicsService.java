@@ -5,6 +5,7 @@ import fr.apir.marvel.api.exceptions.QueryException;
 import fr.apir.marvel.api.objects.Character;
 import fr.apir.marvel.api.objects.*;
 import fr.apir.marvel.api.objects.ref.DataWrapper;
+import fr.apir.marvel.api.params.name.comic.*;
 import retrofit.http.GET;
 import retrofit.http.Path;
 import retrofit.http.QueryMap;
@@ -20,7 +21,7 @@ public interface ComicsService {
     public DataWrapper<Comic> listComic() throws AuthorizationException, QueryException;
 
     @GET("/v1/public/comics")
-    public DataWrapper<Comic> listComic(@QueryMap Map<String, String> options) throws AuthorizationException, QueryException;
+    public DataWrapper<Comic> listComic(@QueryMap Map<ListComicParamName, String> options) throws AuthorizationException, QueryException;
 
     @GET("/v1/public/comics/{comicId}")
     public DataWrapper<Comic> getComic(@Path("comicId") int comicId) throws AuthorizationException, QueryException;
@@ -29,23 +30,23 @@ public interface ComicsService {
     public DataWrapper<Character> getComicCharacters(@Path("comicId") int comicId) throws AuthorizationException, QueryException;
 
     @GET("/v1/public/comics/{comicId}/characters")
-    public DataWrapper<Character> getComicCharacters(@Path("comicId") int comicId, @QueryMap Map<String, String> options) throws AuthorizationException, QueryException;
+    public DataWrapper<Character> getComicCharacters(@Path("comicId") int comicId, @QueryMap Map<GetComicCharactersParamName, String> options) throws AuthorizationException, QueryException;
 
     @GET("/v1/public/comics/{comicId}/creators")
     public DataWrapper<Creator> getComicCreators(@Path("comicId") int comicId) throws AuthorizationException, QueryException;
 
     @GET("/v1/public/comics/{comicId}/creators")
-    public DataWrapper<Creator> getComicCreators(@Path("comicId") int comicId, @QueryMap Map<String, String> options) throws AuthorizationException, QueryException;
+    public DataWrapper<Creator> getComicCreators(@Path("comicId") int comicId, @QueryMap Map<GetComicCreatorsParamName, String> options) throws AuthorizationException, QueryException;
 
     @GET("/v1/public/comics/{comicId}/events")
     public DataWrapper<Event> getComicEvents(@Path("comicId") int comicId) throws AuthorizationException, QueryException;
 
     @GET("/v1/public/comics/{comicId}/events")
-    public DataWrapper<Event> getComicEvents(@Path("comicId") int comicId, @QueryMap Map<String, String> options) throws AuthorizationException, QueryException;
+    public DataWrapper<Event> getComicEvents(@Path("comicId") int comicId, @QueryMap Map<GetComicEventsParamName, String> options) throws AuthorizationException, QueryException;
 
     @GET("/v1/public/comics/{comicId}/stories")
     public DataWrapper<Story> getComicStories(@Path("comicId") int comicId) throws AuthorizationException, QueryException;
 
     @GET("/v1/public/comics/{comicId}/stories")
-    public DataWrapper<Story> getComicStories(@Path("comicId") int comicId, @QueryMap Map<String, String> options) throws AuthorizationException, QueryException;
+    public DataWrapper<Story> getComicStories(@Path("comicId") int comicId, @QueryMap Map<GetComicStoriesParamName, String> options) throws AuthorizationException, QueryException;
 }

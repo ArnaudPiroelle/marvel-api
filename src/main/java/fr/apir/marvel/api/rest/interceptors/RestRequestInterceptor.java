@@ -1,4 +1,4 @@
-package fr.apir.marvel.api.rest;
+package fr.apir.marvel.api.rest.interceptors;
 
 import fr.apir.marvel.api.util.MD5Util;
 import retrofit.RequestInterceptor;

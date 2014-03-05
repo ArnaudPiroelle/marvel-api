@@ -1,22 +1,26 @@
-package fr.apir.marvel.api.rest.params;
+package fr.apir.marvel.api.params.name.serie;
 
 /**
  * Created by Arnaud on 04/03/2014.
  */
-public enum CharacterListCharacterParam {
-    NAME("name"),
+public enum ListSerieParamName {
+    TITLE("title"),
     MODIFIED_SINCE("modifiedSince"),
     COMICS("comics"),
+    STORIES("stories"),
     SERIES("series"),
     EVENTS("events"),
-    STORIES("stories"),
+    CREATORS("creators"),
+    CHARACTERS("characters"),
+    SERIES_TYPE("seriesType"),
+    CONTAINS("contains"),
     ORDER_BY("orderBy"),
     LIMIT("limit"),
     OFFSET("offset");
 
     private String label;
 
-    private CharacterListCharacterParam(String value) {
+    private ListSerieParamName(String value) {
         this.label = value;
     }
 

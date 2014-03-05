@@ -1,4 +1,4 @@
-package fr.apir.marvel.api.rest;
+package fr.apir.marvel.api.rest.handlers;
 
 import fr.apir.marvel.api.exceptions.AuthorizationException;
 import fr.apir.marvel.api.exceptions.QueryException;
@@ -21,7 +21,10 @@ public class RestServiceErrorHandler implements ErrorHandler {
                 return new AuthorizationException(data.getMessage(), cause);
             } else if (r.getStatus() == 409) {
                 return new QueryException(data.getMessage(), cause);
+            } else if (r.getStatus() == 404) {
+                //TODO: Ajout la gestion de l'erreur 404
             }
+
 
         }
 
