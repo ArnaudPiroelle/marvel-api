@@ -26,9 +26,9 @@
     </licenses>
 
     <scm>
-        <url>scm:git:ssh://github.com/ArnaudPiroelle/marvel-api.git</url>
-        <connection>scm:git:ssh://github.com/ArnaudPiroelle/marvel-api.git</connection>
-        <developerConnection>scm:git:ssh://github.com/ArnaudPiroelle/marvel-api.git</developerConnection>
+        <url>scm:git:git@github.com:ArnaudPiroelle/marvel-api.git</url>
+        <connection>scm:git:git@github.com:ArnaudPiroelle/marvel-api.git</connection>
+        <developerConnection>scm:git:git@github.com:ArnaudPiroelle/marvel-api.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
