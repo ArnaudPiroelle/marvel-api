@@ -22,7 +22,9 @@ public class RestServiceErrorHandler implements ErrorHandler {
             } else if (r.getStatus() == 409) {
                 return new QueryException(data.getMessage(), cause);
             } else if (r.getStatus() == 404) {
-                //TODO: Ajout la gestion de l'erreur 404
+                //TODO: Ajout de la gestion de l'erreur 404 (entité n'existe pas)
+            } else if (r.getStatus() == 429) {
+                //TODO: Ajout de la gestion de l'erreur 429 (RateLimit)
             }
 
 
