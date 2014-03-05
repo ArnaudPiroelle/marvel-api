@@ -29,6 +29,7 @@
         <url>scm:git:git://github.com/ArnaudPiroelle/marvel-api.git</url>
         <connection>scm:git:git://github.com/ArnaudPiroelle/marvel-api.git</connection>
         <developerConnection>scm:git:git@github.com:ArnaudPiroelle/marvel-api.git</developerConnection>
+        <tag>HEAD</tag>
     </scm>
 
     <developers>
