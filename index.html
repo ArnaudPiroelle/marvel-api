@@ -3,12 +3,14 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link href="static/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="static/app.css" rel="stylesheet">
+    <link href="static/app-theme.css" rel="stylesheet">
+
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,300italic,100,100italic,300" rel="stylesheet" type="text/css">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -16,68 +18,116 @@
     <title>Marvel-api by ArnaudPiroelle</title>
   </head>
 
-  <body>
+    <body data-target=".content-nav">
     <header>
-      <div class="inner">
-        <h1>Marvel-api</h1>
-        <h2>Rest API Client for Marvel API</h2>
-        <a href="https://github.com/ArnaudPiroelle/marvel-api" class="button"><small>View project on</small>GitHub</a>
+      <div class="container">
+        <div class="row">
+          <div class="span5">
+            <h1>Marvel-API</h1>
+          </div>
+          <div class="span7">
+            <menu>
+              <ul>
+                <li><a href="#download" class="menu download">Download <span class="version-tag">Latest</span></a></li>
+                <li><a href="http://github.com/ArnaudPiroelle/marvel-api" data-title="View GitHub Project" class="menu github"><img src="static/icon-github.png" alt="GitHub"/></a></li>
+              </ul>
+            </menu>
+          </div>
       </div>
     </header>
-
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-        </section>
-
-        <aside id="sidebar">
-          <a href="https://github.com/ArnaudPiroelle/marvel-api/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/ArnaudPiroelle/marvel-api/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
-
-          <p class="repo-owner"><a href="https://github.com/ArnaudPiroelle/marvel-api"></a> is maintained by <a href="https://github.com/ArnaudPiroelle">ArnaudPiroelle</a>.</p>
-
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
+    <section id="subtitle">
+      <div class="container">
+        <div class="row">
+          <div class="span12">
+            <h2>An Android and Java <strong>Rest Client</strong> for Marvel API</h2>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
+    <section id="body">
+      <div class="container">
+        <div class="row">
+          <div class="span9">
+            <h3 id="introduction">Introduction</h3>
+            <p>Marvel Entertainment released early 2014 an API to access their encyclopedia superhero.</p>
 
-  
+<p>The Marvel Comics API Allows developers everywhere to access information about Marvel's vast library of comics from what's coming up, to 70 years ago.</p>
+
+<p>All that you need to use this API is to create an account on the portal dedicated to developers, to create an account and get an api key.
+To do this, go to the following address: https://developer.marvel.com.</p>
+
+<p>After your registration, get your public key and private key (keep the secret).</p>
+            <h3 id="api-usages">API Usages</h3>
+            <p>Start by initializing the API with your keys</p>
+            <pre class="prettyprint">MarvelApiBuilder.initMarvelApiBuilder(YOUR_PUBLIC_APIKEY, YOUR_PRIVATE_APIKEY);</pre>
+            <p>Retrieve the service you want to use</p>
+            <pre class="prettyprint">
+CharactersService charactersService = MarvelApiBuilder.getService(CharactersService.class);
+ComicsService comicsService = MarvelApiBuilder.getService(ComicsService.class);
+CreatorsService creatorsService = MarvelApiBuilder.getService(CreatorsService.class);
+EventsService eventsService = MarvelApiBuilder.getService(EventsService.class);
+SeriesService seriesService = MarvelApiBuilder.getService(SeriesService.class);
+StoriesService storiesService = MarvelApiBuilder.getService(StoriesService.class);
+</pre>
+            <p>Each service offers all the methods available through the API</p>
+            <h3 id="download">Download</h3>
+            <p><a href="#" class="dl version-href">&darr; <span class="version-tag">Latest</span> JAR</a></p>
+            <p>The source code to the Marvel-API Client and this website is <a href="http://github.com/ArnaudPiroelle/marvel-api">available on GitHub</a>.</p>
+            <h4>Maven</h4>
+            <pre class="prettyprint">&lt;dependency>
+  &lt;groupId>fr.apir&lt;/groupId>
+  &lt;artifactId>marvel-api&lt;/artifactId>
+  &lt;version><span class="version pln"><em>(insert latest version)</em></span>&lt;/version>
+&lt;/dependency></pre>
+            <h4>Gradle</h4>
+            <pre class="prettyprint">dependencies {
+  compile 'fr.apir:marvel-api:(insert latest version)' 
+}</pre>
+
+            <h3 id="license">License</h3>
+            <pre>Copyright 2014 Arnaud Piroelle.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.</pre>
+            </div>
+          <div class="span3">
+            <div class="content-nav" data-spy="affix" data-offset-top="80">
+              <ul class="nav nav-tabs nav-stacked primary">
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#api-usages">API Usages</a></li>
+                <li><a href="#download">Download</a></li>
+                <li><a href="#license">License</a></li>
+              </ul>
+              <ul class="nav nav-pills nav-stacked secondary">
+                <li><a href="javadoc/index.html">Javadoc</a></li>
+                <li><a href="https://plus.google.com/+Arnaudpiroelle_Informatique">Google +</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="span12 logo">
+            <a href="https://squareup.com"><img src="static/logo-square.png" alt="Square, Inc."/></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="static/bootstrap.min.js"></script>
+    <script src="static/jquery.smooth-scroll.min.js"></script>
+    <script src="static/jquery-maven-artifact.min.js"></script>
+    <script src="static/prettify.js"></script>
+    <script type="text/javascript">
+
+    </script>
   </body>
 </html>
