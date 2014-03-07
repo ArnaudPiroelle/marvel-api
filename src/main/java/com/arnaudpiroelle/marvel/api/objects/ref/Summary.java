@@ -13,25 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.arnaudpiroelle.marvel.api;
-
-import com.arnaudpiroelle.marvel.api.services.CharactersService;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+package com.arnaudpiroelle.marvel.api.objects.ref;
 
 /**
- * Created by Piroelle on 04/03/14.
+ * Created by Arnaud on 03/03/2014.
  */
-public class MarvelApiBuilderTest {
-    @Before
-    public void setUp() throws Exception {
-        MarvelApiBuilder.initMarvelApiBuilder("", "");
+public class Summary {
+    protected String resourceURI;
+    protected String name;
+
+    public String getResourceURI() {
+        return resourceURI;
     }
 
-    @Test
-    public void testApiGetService() throws Exception {
-        CharactersService charactersService = MarvelApiBuilder.getService(CharactersService.class);
-        Assert.assertNotNull(charactersService);
+    public void setResourceURI(String resourceURI) {
+        this.resourceURI = resourceURI;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

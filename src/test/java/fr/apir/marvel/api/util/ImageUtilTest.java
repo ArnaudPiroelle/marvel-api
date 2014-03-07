@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package fr.apir.marvel.api.util;
+package com.arnaudpiroelle.marvel.api.util;
 
-import fr.apir.marvel.api.objects.Image;
+import com.arnaudpiroelle.marvel.api.objects.Image;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

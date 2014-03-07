@@ -13,25 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.arnaudpiroelle.marvel.api;
-
-import com.arnaudpiroelle.marvel.api.services.CharactersService;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+package com.arnaudpiroelle.marvel.api.params.name.event;
 
 /**
- * Created by Piroelle on 04/03/14.
+ * Created by Arnaud on 04/03/2014.
  */
-public class MarvelApiBuilderTest {
-    @Before
-    public void setUp() throws Exception {
-        MarvelApiBuilder.initMarvelApiBuilder("", "");
+public enum GetEventSeriesParamName {
+    TITLE("title"),
+    MODIFIED_SINCE("modifiedSince"),
+    COMICS("comics"),
+    STORIES("stories"),
+    CREATORS("creators"),
+    CHARACTERS("characters"),
+    SERIES_TYPE("seriesType"),
+    ORDER_BY("orderBy"),
+    LIMIT("limit"),
+    OFFSET("offset");
+
+    private String label;
+
+    private GetEventSeriesParamName(String value) {
+        this.label = value;
     }
 
-    @Test
-    public void testApiGetService() throws Exception {
-        CharactersService charactersService = MarvelApiBuilder.getService(CharactersService.class);
-        Assert.assertNotNull(charactersService);
+    @Override
+    public String toString() {
+        return this.label;
     }
 }

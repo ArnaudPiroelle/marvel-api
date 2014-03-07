@@ -13,25 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.arnaudpiroelle.marvel.api;
+package com.arnaudpiroelle.marvel.api.util;
 
-import com.arnaudpiroelle.marvel.api.services.CharactersService;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 /**
  * Created by Piroelle on 04/03/14.
  */
-public class MarvelApiBuilderTest {
-    @Before
-    public void setUp() throws Exception {
-        MarvelApiBuilder.initMarvelApiBuilder("", "");
-    }
+public class MD5Util {
+    public static String hash(String publicApiKey, String privateApiKey, String timestamp) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            String toHash = timestamp + privateApiKey + publicApiKey;
+            return new BigInteger(1, md.digest(toHash.getBytes())).toString(16);
+        } catch (NoSuchAlgorithmException e) {
+        }
 
-    @Test
-    public void testApiGetService() throws Exception {
-        CharactersService charactersService = MarvelApiBuilder.getService(CharactersService.class);
-        Assert.assertNotNull(charactersService);
+        return null;
     }
 }
