@@ -75,13 +75,13 @@ StoriesService storiesService = MarvelApiBuilder.getService(StoriesService.class
             <p>The source code to the Marvel-API Client and this website is <a href="http://github.com/ArnaudPiroelle/marvel-api">available on GitHub</a>.</p>
             <h4>Maven</h4>
             <pre class="prettyprint">&lt;dependency>
-  &lt;groupId>fr.apir&lt;/groupId>
+  &lt;groupId>com.arnaudpiroelle&lt;/groupId>
   &lt;artifactId>marvel-api&lt;/artifactId>
   &lt;version><span class="version pln"><em>(insert latest version)</em></span>&lt;/version>
 &lt;/dependency></pre>
             <h4>Gradle</h4>
             <pre class="prettyprint">dependencies {
-  compile 'fr.apir:marvel-api:(insert latest version)' 
+  compile 'com.arnaudpiroelle:marvel-api:(insert latest version)' 
 }</pre>
 
             <h3 id="license">License</h3>
@@ -116,7 +116,7 @@ limitations under the License.</pre>
         </div>
         <div class="row">
           <div class="span12 logo">
-            <a href="https://squareup.com"><img src="static/logo-square.png" alt="Square, Inc."/></a>
+            <a href="http://www.arnaudpiroelle.com"><img src="static/logo.png" alt="Square, Inc."/></a>
           </div>
         </div>
       </div>
@@ -127,7 +127,34 @@ limitations under the License.</pre>
     <script src="static/jquery-maven-artifact.min.js"></script>
     <script src="static/prettify.js"></script>
     <script type="text/javascript">
+      $(function() {
+        // Syntax highlight code blocks.
+        prettyPrint();
 
+        // Spy on scroll position for real-time updating of current section.
+        $('body').scrollspy();
+
+        // Use smooth-scroll for internal links.
+        $('a').smoothScroll();
+
+        // Enable tooltips on the header nav image items.
+        $('.menu').tooltip({
+          placement: 'bottom',
+          trigger: 'hover',
+          container: 'body',
+          delay: {
+            show: 500,
+            hide: 0
+          }
+        });
+
+        // Look up the latest version of the library.
+        $.fn.artifactVersion('com.arnaudpiroelle', 'marvel-api', function(version, url) {
+          $('.version').text(version);
+          $('.version-tag').text('v' + version);
+          $('.version-href').attr('href', url);
+        });
+      });
     </script>
   </body>
 </html>
