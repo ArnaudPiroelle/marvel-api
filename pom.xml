@@ -111,7 +111,8 @@
                         <email>contact@arnaudpiroelle.com</email>
                     </properties>
                     <excludes>
-                        <exclude>**/README</exclude>
+                        <exclude>**/README.md</exclude>
+                        <exclude>**/LICENSE.txt</exclude>
                         <exclude>src/test/resources/**</exclude>
                         <exclude>src/main/resources/**</exclude>
                     </excludes>
