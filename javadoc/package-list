@@ -1,0 +1,15 @@
+com.arnaudpiroelle.marvel.api
+com.arnaudpiroelle.marvel.api.exceptions
+com.arnaudpiroelle.marvel.api.objects
+com.arnaudpiroelle.marvel.api.objects.ref
+com.arnaudpiroelle.marvel.api.params.name.character
+com.arnaudpiroelle.marvel.api.params.name.comic
+com.arnaudpiroelle.marvel.api.params.name.creator
+com.arnaudpiroelle.marvel.api.params.name.event
+com.arnaudpiroelle.marvel.api.params.name.serie
+com.arnaudpiroelle.marvel.api.params.name.story
+com.arnaudpiroelle.marvel.api.params.value
+com.arnaudpiroelle.marvel.api.rest.handlers
+com.arnaudpiroelle.marvel.api.rest.interceptors
+com.arnaudpiroelle.marvel.api.services
+com.arnaudpiroelle.marvel.api.util
