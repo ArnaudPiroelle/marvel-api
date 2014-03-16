@@ -26,7 +26,7 @@
 
     <groupId>com.arnaudpiroelle</groupId>
     <artifactId>marvel-api</artifactId>
-    <version>0.3.0</version>
+    <version>0.3.1-SNAPSHOT</version>
 
     <name>Marvel API</name>
     <description>Marvel API is an OpenSource client for Marvel API</description>
@@ -51,7 +51,7 @@
         <url>scm:git:git@github.com:ArnaudPiroelle/marvel-api.git</url>
         <connection>scm:git:git@github.com:ArnaudPiroelle/marvel-api.git</connection>
         <developerConnection>scm:git:git@github.com:ArnaudPiroelle/marvel-api.git</developerConnection>
-        <tag>v0.3.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <developers>
