@@ -19,10 +19,11 @@ import com.arnaudpiroelle.marvel.api.exceptions.AuthorizationException;
 import com.arnaudpiroelle.marvel.api.exceptions.EntityNotFoundException;
 import com.arnaudpiroelle.marvel.api.exceptions.QueryException;
 import com.arnaudpiroelle.marvel.api.exceptions.RateLimitException;
-import com.arnaudpiroelle.marvel.api.objects.*;
 import com.arnaudpiroelle.marvel.api.objects.Character;
+import com.arnaudpiroelle.marvel.api.objects.*;
 import com.arnaudpiroelle.marvel.api.objects.ref.DataWrapper;
 import com.arnaudpiroelle.marvel.api.params.name.event.*;
+import retrofit.Callback;
 import retrofit.http.GET;
 import retrofit.http.Path;
 import retrofit.http.QueryMap;
@@ -72,5 +73,45 @@ public interface EventsService {
 
     @GET("/v1/public/events/{eventId}/stories")
     public DataWrapper<Story> getEventStories(@Path("eventId") int eventId, @QueryMap Map<GetEventStoriesParamName, String> options) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
+
+    //Async
+    @GET("/v1/public/events")
+    public void listEvent(Callback<DataWrapper<Event>> callback) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
+
+    @GET("/v1/public/events")
+    public void listEvent(@QueryMap Map<ListEventsParamName, String> options, Callback<DataWrapper<Event>> callback) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
+
+    @GET("/v1/public/events/{eventId}")
+    public void getEvent(@Path("eventId") int eventId, Callback<DataWrapper<Event>> callback) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
+
+    @GET("/v1/public/events/{eventId}/characters")
+    public void getEventCharacters(@Path("eventId") int eventId, Callback<DataWrapper<Character>> callback) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
+
+    @GET("/v1/public/events/{eventId}/characters")
+    public void getEventCharacters(@Path("eventId") int eventId, @QueryMap Map<GetEventCharactersParamName, String> options, Callback<DataWrapper<Character>> callback) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
+
+    @GET("/v1/public/events/{eventId}/comics")
+    public void getEventComics(@Path("eventId") int eventId, Callback<DataWrapper<Comic>> callback) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
+
+    @GET("/v1/public/events/{eventId}/comics")
+    public void getEventComics(@Path("eventId") int eventId, @QueryMap Map<GetEventComicsParamName, String> options, Callback<DataWrapper<Comic>> callback) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
+
+    @GET("/v1/public/events/{eventId}/creators")
+    public void getEventCreators(@Path("eventId") int eventId, Callback<DataWrapper<Creator>> callback) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
+
+    @GET("/v1/public/events/{eventId}/creators")
+    public void getEventCreators(@Path("eventId") int eventId, @QueryMap Map<GetEventCreatorsParamName, String> options, Callback<DataWrapper<Creator>> callback) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
+
+    @GET("/v1/public/events/{eventId}/series")
+    public void getEventSeries(@Path("eventId") int eventId, Callback<DataWrapper<Series>> callback) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
+
+    @GET("/v1/public/events/{eventId}/series")
+    public void getEventSeries(@Path("eventId") int eventId, @QueryMap Map<GetEventSeriesParamName, String> options, Callback<DataWrapper<Series>> callback) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
+
+    @GET("/v1/public/events/{eventId}/stories")
+    public void getEventStories(@Path("eventId") int eventId, Callback<DataWrapper<Story>> callback) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
+
+    @GET("/v1/public/events/{eventId}/stories")
+    public void getEventStories(@Path("eventId") int eventId, @QueryMap Map<GetEventStoriesParamName, String> options, Callback<DataWrapper<Story>> callback) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
 
 }
