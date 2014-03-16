@@ -40,7 +40,7 @@ Each service offers all the methods available through the API
 ### Gradle
 ```
 dependencies {
-  compile 'fr.apir:marvel-api:(insert latest version)'
+  compile 'com.arnaudpiroelle:marvel-api:(insert latest version)'
 }
 ```
 
