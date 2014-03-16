@@ -81,7 +81,7 @@ StoriesService storiesService = MarvelApiBuilder.getService(StoriesService.class
 &lt;/dependency></pre>
             <h4>Gradle</h4>
             <pre class="prettyprint">dependencies {
-  compile 'com.arnaudpiroelle:marvel-api:(insert latest version)' 
+  compile 'com.arnaudpiroelle:marvel-api:<span class="version pln"><em>(insert latest version)</em></span>' 
 }</pre>
 
             <h3 id="license">License</h3>
@@ -149,7 +149,7 @@ limitations under the License.</pre>
         });
 
         // Look up the latest version of the library.
-        $.fn.artifactVersion('com.arnaudpiroelle', 'marvel-api', function(version, url) {
+        $.fn.artifactVersion('com.square.retrofit', 'retrofit', function(version, url) {
           $('.version').text(version);
           $('.version-tag').text('v' + version);
           $('.version-href').attr('href', url);
