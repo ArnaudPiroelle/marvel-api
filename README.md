@@ -23,8 +23,9 @@ CreatorsService creatorsService = MarvelApiBuilder.getService(CreatorsService.cl
 EventsService eventsService = MarvelApiBuilder.getService(EventsService.class);
 SeriesService seriesService = MarvelApiBuilder.getService(SeriesService.class);
 StoriesService storiesService = MarvelApiBuilder.getService(StoriesService.class);
-Each service offers all the methods available through the API
 ```
+
+Each service offers all the methods available through the API
 
 ## Download
 
