@@ -15,13 +15,13 @@
  */
 package com.arnaudpiroelle.marvel.api;
 
+import com.arnaudpiroelle.marvel.api.exceptions.ApiBuilderNotInitializedException;
+import com.arnaudpiroelle.marvel.api.rest.handlers.RestServiceErrorHandler;
+import com.arnaudpiroelle.marvel.api.rest.interceptors.RestRequestInterceptor;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.internal.bind.DateTypeAdapter;
-import com.arnaudpiroelle.marvel.api.exceptions.ApiBuilderNotInitializedException;
-import com.arnaudpiroelle.marvel.api.rest.handlers.RestServiceErrorHandler;
-import com.arnaudpiroelle.marvel.api.rest.interceptors.RestRequestInterceptor;
 import retrofit.Endpoint;
 import retrofit.Endpoints;
 import retrofit.RestAdapter;
@@ -30,26 +30,33 @@ import retrofit.converter.GsonConverter;
 import java.util.Date;
 
 /**
- * Created by Piroelle on 04/03/14.
+ * ApiBuilder used to get implementated Services
+ *
+ * @author Arnaud Piroelle
+ * @version 1.0
  */
 public class MarvelApiBuilder {
-    private static RestAdapter restAdapter = null;
-    private static Endpoint endpoint;
-
     private static final Gson gson = new GsonBuilder()
             .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
             .registerTypeAdapter(Date.class, new DateTypeAdapter())
             .create();
-
+    private static RestAdapter restAdapter = null;
+    private static Endpoint endpoint;
     private static RestRequestInterceptor restRequestInterceptor = null;
 
+    /**
+     * Init method
+     *
+     * @param publicApiKey  Your public ApiKey
+     * @param privateApiKey Your private ApiKey
+     */
     public static void initMarvelApiBuilder(String publicApiKey, String privateApiKey) {
         if (restRequestInterceptor == null) {
             restRequestInterceptor = new RestRequestInterceptor(publicApiKey, privateApiKey);
         }
     }
 
-    public static RestAdapter getAdapter() throws ApiBuilderNotInitializedException {
+    private static RestAdapter getAdapter() throws ApiBuilderNotInitializedException {
         if (restRequestInterceptor == null) {
             throw new ApiBuilderNotInitializedException();
         }
@@ -67,10 +74,23 @@ public class MarvelApiBuilder {
         return restAdapter;
     }
 
+    /**
+     * Method used to get implemented service
+     *
+     * @param serviceClass Service class
+     * @param <T>          Service class
+     * @return service
+     * @throws ApiBuilderNotInitializedException Init Exception APIBuilder
+     */
     public static <T> T getService(Class<T> serviceClass) throws ApiBuilderNotInitializedException {
         return getAdapter().create(serviceClass);
     }
 
+    /**
+     * Method used to change endpoint url
+     *
+     * @return Api Endpoint
+     */
     public static Endpoint getEndpoint() {
         if (endpoint == null) {
             endpoint = Endpoints.newFixedEndpoint("http://gateway.marvel.com");

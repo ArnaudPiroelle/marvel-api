@@ -30,6 +30,7 @@ public class Comic extends Data {
     private String title;
     private Double issueNumber;
     private String variantDescription;
+    private String description;
     private Date modified;
     private String isbn;
     private String upc;
@@ -277,5 +278,13 @@ public class Comic extends Data {
 
     public void setEvents(EventList events) {
         this.events = events;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

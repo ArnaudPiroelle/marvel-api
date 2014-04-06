@@ -19,13 +19,60 @@ package com.arnaudpiroelle.marvel.api.params.name.serie;
  * Created by Arnaud on 04/03/2014.
  */
 public enum GetSerieStoriesParamName {
+    /**
+     * Description: Return only stories which have been modified since the specified date.
+     * Parameter type: query
+     * Data type: Date
+     */
     MODIFIED_SINCE("modifiedSince"),
+
+    /**
+     * Description: Return only stories contained in the specified (accepts a comma-separated list of ids).
+     * Parameter type: query
+     * Data type: int
+     */
     COMICS("comics"),
+
+    /**
+     * Description: Return only stories which take place during the specified events (accepts a comma-separated list of ids).
+     * Parameter type: query
+     * Data type: int
+     */
     EVENTS("events"),
+
+    /**
+     * Description: Return only stories which feature work by the specified creators (accepts a comma-separated list of ids).
+     * Parameter type: query
+     * Data type: int
+     */
     CREATORS("creators"),
+
+    /**
+     * Description: Return only stories which feature the specified characters (accepts a comma-separated list of ids).
+     * Parameter type: query
+     * Data type: int
+     */
     CHARACTERS("characters"),
+
+    /**
+     * Description: Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed.
+     * Parameter type: query
+     * Data type: string
+     */
     ORDER_BY("orderBy"),
+
+    /**
+     * Description: Limit the result set to the specified number of resources.
+     * Parameter type: query
+     * Data type: int
+     */
     LIMIT("limit"),
+
+    /**
+     * Description: Skip the specified number of resources in the result set.
+     * Parameter type: query
+     * Data type: int
+     */
     OFFSET("offset");
 
     private String label;

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.arnaudpiroelle.marvel.api.services;
+package com.arnaudpiroelle.marvel.api.services.async;
 
 import com.arnaudpiroelle.marvel.api.exceptions.AuthorizationException;
 import com.arnaudpiroelle.marvel.api.exceptions.EntityNotFoundException;
@@ -33,48 +33,8 @@ import java.util.Map;
 /**
  * Created by Arnaud on 03/03/2014.
  */
-public interface SeriesService {
+public interface SeriesAsyncService {
 
-    @GET("/v1/public/series")
-    public DataWrapper<Series> listSerie() throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
-
-    @GET("/v1/public/series")
-    public DataWrapper<Series> listSerie(@QueryMap Map<ListSerieParamName, String> options) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
-
-    @GET("/v1/public/series/{seriesId}")
-    public DataWrapper<Series> getSerie(@Path("seriesId") int seriesId) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
-
-    @GET("/v1/public/series/{seriesId}/characters")
-    public DataWrapper<Character> getSerieCharacters(@Path("seriesId") int seriesId) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
-
-    @GET("/v1/public/series/{seriesId}/characters")
-    public DataWrapper<Character> getSerieCharacters(@Path("seriesId") int seriesId, @QueryMap Map<GetSerieCharactersParamName, String> options) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
-
-    @GET("/v1/public/series/{seriesId}/comics")
-    public DataWrapper<Comic> getSerieComics(@Path("seriesId") int seriesId) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
-
-    @GET("/v1/public/series/{seriesId}/comics")
-    public DataWrapper<Comic> getSerieComics(@Path("seriesId") int seriesId, @QueryMap Map<GetSerieComicsParamName, String> options) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
-
-    @GET("/v1/public/series/{seriesId}/creators")
-    public DataWrapper<Creator> getSerieCreators(@Path("seriesId") int seriesId) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
-
-    @GET("/v1/public/series/{seriesId}/creators")
-    public DataWrapper<Creator> getSerieCreators(@Path("seriesId") int seriesId, @QueryMap Map<GetSerieCreatorsParamName, String> options) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
-
-    @GET("/v1/public/series/{seriesId}/events")
-    public DataWrapper<Event> getSerieEvents(@Path("seriesId") int seriesId) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
-
-    @GET("/v1/public/series/{seriesId}/events")
-    public DataWrapper<Event> getSerieEvents(@Path("seriesId") int seriesId, @QueryMap Map<GetSerieEventsParamName, String> options) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
-
-    @GET("/v1/public/series/{seriesId}/stories")
-    public DataWrapper<Story> getSerieStories(@Path("seriesId") int seriesId) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
-
-    @GET("/v1/public/series/{seriesId}/stories")
-    public DataWrapper<Story> getSerieStories(@Path("seriesId") int seriesId, @QueryMap Map<GetSerieStoriesParamName, String> options) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
-
-    //Async
     @GET("/v1/public/series")
     public void listSerie(Callback<DataWrapper<Series>> callback) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
 

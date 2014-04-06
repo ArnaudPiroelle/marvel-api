@@ -35,10 +35,10 @@ public class RestRequestInterceptor implements RequestInterceptor {
 
     @Override
     public void intercept(RequestFacade request) {
-        // Gestion du content type par défaut pour l'api
+        // Default Content Type
         request.addHeader("Content-Type", "application/json");
 
-        // Gestion de l'authentification (server-side)
+        // Default api key
         String timestamp = String.valueOf(new Date().getTime());
 
         request.addEncodedQueryParam("apikey", apiKeyPublic);

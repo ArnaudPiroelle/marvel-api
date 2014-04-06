@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.arnaudpiroelle.marvel.api.services;
+package com.arnaudpiroelle.marvel.api.services.async;
 
 import com.arnaudpiroelle.marvel.api.exceptions.AuthorizationException;
 import com.arnaudpiroelle.marvel.api.exceptions.EntityNotFoundException;
@@ -33,48 +33,8 @@ import java.util.Map;
 /**
  * Created by Arnaud on 03/03/2014.
  */
-public interface StoriesService {
+public interface StoriesAsyncService {
 
-    @GET("/v1/public/stories")
-    public DataWrapper<Story> listStory() throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
-
-    @GET("/v1/public/stories")
-    public DataWrapper<Story> listStory(@QueryMap Map<ListStorieParamName, String> options) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
-
-    @GET("/v1/public/stories/{storyId}")
-    public DataWrapper<Story> getStory(@Path("storyId") int storyId) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
-
-    @GET("/v1/public/stories/{storyId}/characters")
-    public DataWrapper<Character> getStoryCharacters(@Path("storyId") int storyId) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
-
-    @GET("/v1/public/stories/{storyId}/characters")
-    public DataWrapper<Character> getStoryCharacters(@Path("storyId") int storyId, @QueryMap Map<GetStoryCharactersParamName, String> options) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
-
-    @GET("/v1/public/stories/{storyId}/comics")
-    public DataWrapper<Comic> getStoryComics(@Path("storyId") int storyId) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
-
-    @GET("/v1/public/stories/{storyId}/comics")
-    public DataWrapper<Comic> getStoryComics(@Path("storyId") int storyId, @QueryMap Map<GetStoryComicsParamName, String> options) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
-
-    @GET("/v1/public/stories/{storyId}/creators")
-    public DataWrapper<Creator> getStoryCreators(@Path("storyId") int storyId) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
-
-    @GET("/v1/public/stories/{storyId}/creators")
-    public DataWrapper<Creator> getStoryCreators(@Path("storyId") int storyId, @QueryMap Map<GetStoryCreatorsParamName, String> options) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
-
-    @GET("/v1/public/stories/{storyId}/events")
-    public DataWrapper<Event> getStoryEvents(@Path("storyId") int storyId) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
-
-    @GET("/v1/public/stories/{storyId}/events")
-    public DataWrapper<Event> getStoryEvents(@Path("storyId") int storyId, @QueryMap Map<GetStoryEventsParamName, String> options) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
-
-    @GET("/v1/public/stories/{storyId}/series")
-    public DataWrapper<Series> getStorySeries(@Path("storyId") int storyId) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
-
-    @GET("/v1/public/stories/{storyId}/series")
-    public DataWrapper<Series> getStorySeries(@Path("storyId") int storyId, @QueryMap Map<GetStorySeriesParamName, String> options) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
-
-    //Async
     @GET("/v1/public/stories")
     public void listStory(Callback<DataWrapper<Story>> callback) throws AuthorizationException, QueryException, RateLimitException, EntityNotFoundException;
 

@@ -15,7 +15,7 @@
  */
 package com.arnaudpiroelle.marvel.api;
 
-import com.arnaudpiroelle.marvel.api.services.CharactersService;
+import com.arnaudpiroelle.marvel.api.services.sync.CharactersService;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
