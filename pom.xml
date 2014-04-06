@@ -27,7 +27,7 @@
 
     <groupId>com.arnaudpiroelle</groupId>
     <artifactId>marvel-api</artifactId>
-    <version>0.3.1-SNAPSHOT</version>
+    <version>0.4.1-SNAPSHOT</version>
 
     <name>Marvel API</name>
     <description>Marvel API is an OpenSource client for Marvel API</description>
