@@ -37,9 +37,10 @@ import java.util.Date;
  */
 public class MarvelApiBuilder {
     private static final Gson gson = new GsonBuilder()
+            .setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
             .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
-            .registerTypeAdapter(Date.class, new DateTypeAdapter())
             .create();
+
     private static RestAdapter restAdapter = null;
     private static Endpoint endpoint;
     private static RestRequestInterceptor restRequestInterceptor = null;
