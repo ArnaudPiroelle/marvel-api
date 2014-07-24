@@ -25,7 +25,7 @@ public class DataWrapper<T extends Data> {
     private String copyright;
     private String attributionText;
     private String attributionHTML;
-    private DataContainer data;
+    private DataContainer<T> data;
     private String etag;
 
     public int getCode() {
@@ -68,7 +68,7 @@ public class DataWrapper<T extends Data> {
         this.attributionHTML = attributionHTML;
     }
 
-    public DataContainer getData() {
+    public DataContainer<T> getData() {
         return data;
     }
 
