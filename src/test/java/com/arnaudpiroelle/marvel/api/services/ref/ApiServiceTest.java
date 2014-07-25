@@ -25,7 +25,8 @@ public class ApiServiceTest {
     public void setUp() throws Exception {
 
         String publicApiKey = System.getProperty("marvelPublicApiKey");
-        String privateApiKey = System.getProperty("marvelPrivateApiKey");;
+        String privateApiKey = System.getProperty("marvelPrivateApiKey");
+        ;
 
         MarvelApiBuilder.initMarvelApiBuilder(publicApiKey, privateApiKey);
     }
