@@ -22,6 +22,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Date;
+import java.util.TimeZone;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
@@ -31,6 +32,8 @@ public class GsonDateConvertionTest {
 
     @Before
     public void setUp() throws Exception {
+        TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+
         gson = new GsonBuilder()
                 .setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
                 .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
@@ -42,7 +45,7 @@ public class GsonDateConvertionTest {
         String json = "{ \"date\": \"2014-04-29T14:18:17-0400\"}";
 
         MyDate date = gson.fromJson(json, MyDate.class);
-        assertThat(date.getDate().toString()).isEqualTo("Tue Apr 29 20:18:17 CEST 2014");
+        assertThat(date.getDate().toString()).isEqualTo("Tue Apr 29 18:18:17 UTC 2014");
     }
 
     private class MyDate {
