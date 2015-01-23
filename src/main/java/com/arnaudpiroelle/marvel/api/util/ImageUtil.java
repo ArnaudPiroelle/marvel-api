@@ -18,7 +18,7 @@ package com.arnaudpiroelle.marvel.api.util;
 import com.arnaudpiroelle.marvel.api.objects.Image;
 
 /**
- * Created by Piroelle on 05/03/14.
+ * Created by Arnaud Piroelle on 05/03/14.
  */
 public class ImageUtil {
 
@@ -70,5 +70,6 @@ public class ImageUtil {
         public String toString() {
             return this.label;
         }
+
     }
 }

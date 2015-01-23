@@ -20,7 +20,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * Created by Piroelle on 04/03/14.
+ * Created by Arnaud Piroelle on 04/03/14.
  */
 public class MD5Util {
     public static String hash(String publicApiKey, String privateApiKey, String timestamp) {

@@ -16,22 +16,22 @@
 package com.arnaudpiroelle.marvel.api.exceptions;
 
 /**
- * Created by Piroelle on 04/03/14.
+ * Created by Arnaud Piroelle on 04/03/14.
  */
-public class ApiBuilderNotInitializedException extends Exception {
-    public ApiBuilderNotInitializedException() {
+public class MarvelApiNotInitializedException extends RuntimeException {
+    public MarvelApiNotInitializedException() {
         super();
     }
 
-    public ApiBuilderNotInitializedException(String message) {
+    public MarvelApiNotInitializedException(String message) {
         super(message);
     }
 
-    public ApiBuilderNotInitializedException(Throwable cause) {
+    public MarvelApiNotInitializedException(Throwable cause) {
         super(cause);
     }
 
-    public ApiBuilderNotInitializedException(String message, Throwable cause) {
+    public MarvelApiNotInitializedException(String message, Throwable cause) {
         super(message, cause);
     }
 

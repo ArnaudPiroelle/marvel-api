@@ -16,9 +16,9 @@
 package com.arnaudpiroelle.marvel.api.exceptions;
 
 /**
- * Created by Piroelle on 05/03/14.
+ * Created by Arnaud Piroelle on 05/03/14.
  */
-public class RateLimitException extends Throwable {
+public class RateLimitException extends Exception {
     public RateLimitException() {
         super();
     }

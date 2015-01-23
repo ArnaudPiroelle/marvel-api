@@ -15,10 +15,12 @@
  */
 package com.arnaudpiroelle.marvel.api.params.name.character;
 
+import java.io.Serializable;
+
 /**
  * Created by Arnaud on 04/03/2014.
  */
-public enum GetCharacterComicsParamName {
+public enum GetCharacterComicsParamName implements Serializable{
     /**
      * Description: Filter by the issue format (e.g. comic, digital comic, hardcover).
      * Parameter type: query

@@ -16,7 +16,7 @@
 package com.arnaudpiroelle.marvel.api.exceptions;
 
 /**
- * Created by Piroelle on 04/03/14.
+ * Created by Arnaud Piroelle on 04/03/14.
  */
 public class AuthorizationException extends Exception {
     public AuthorizationException() {

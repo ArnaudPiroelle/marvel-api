@@ -21,7 +21,7 @@ import retrofit.RequestInterceptor;
 import java.util.Date;
 
 /**
- * Created by Piroelle on 04/03/14.
+ * Created by Arnaud Piroelle on 04/03/14.
  */
 public class RestRequestInterceptor implements RequestInterceptor {
 
@@ -39,7 +39,8 @@ public class RestRequestInterceptor implements RequestInterceptor {
         request.addHeader("Content-Type", "application/json");
 
         // Default api key
-        String timestamp = String.valueOf(new Date().getTime());
+        Date now = new Date();
+        String timestamp = String.valueOf(now.getTime());
 
         request.addEncodedQueryParam("apikey", apiKeyPublic);
         request.addEncodedQueryParam("ts", timestamp);

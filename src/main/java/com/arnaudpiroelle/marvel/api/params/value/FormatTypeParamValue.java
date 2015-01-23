@@ -16,7 +16,7 @@
 package com.arnaudpiroelle.marvel.api.params.value;
 
 /**
- * Created by Piroelle on 05/03/14.
+ * Created by Arnaud Piroelle on 05/03/14.
  */
 public enum FormatTypeParamValue {
     COMIC("comic"),

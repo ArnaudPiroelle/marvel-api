@@ -25,7 +25,7 @@ import retrofit.RetrofitError;
 import retrofit.client.Response;
 
 /**
- * Created by Piroelle on 04/03/14.
+ * Created by Arnaud Piroelle on 04/03/14.
  */
 public class RestServiceErrorHandler implements ErrorHandler {
     @Override

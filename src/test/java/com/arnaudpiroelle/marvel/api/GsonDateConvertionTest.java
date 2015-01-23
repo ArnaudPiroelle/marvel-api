@@ -15,18 +15,15 @@
  */
 package com.arnaudpiroelle.marvel.api;
 
-import com.arnaudpiroelle.marvel.api.services.sync.CharactersService;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.internal.bind.DateTypeAdapter;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Date;
 
-import static org.junit.Assert.*;
+import static org.fest.assertions.api.Assertions.assertThat;
 
 public class GsonDateConvertionTest {
 
@@ -37,16 +34,15 @@ public class GsonDateConvertionTest {
         gson = new GsonBuilder()
                 .setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
                 .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
-                //.registerTypeAdapter(Date.class, new DateTypeAdapter())
                 .create();
     }
 
     @Test
-    public void dateConvertTest(){
+    public void should_convert_json_date_to_java_date(){
         String json = "{ \"date\": \"2014-04-29T14:18:17-0400\"}";
 
         MyDate date = gson.fromJson(json, MyDate.class);
-        Assert.assertEquals("Tue Apr 29 20:18:17 CEST 2014", date.getDate().toString());
+        assertThat(date.getDate().toString()).isEqualTo("Tue Apr 29 20:18:17 CEST 2014");
     }
 
     private class MyDate {
