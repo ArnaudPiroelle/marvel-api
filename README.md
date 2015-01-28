@@ -12,17 +12,34 @@ After your registration, get your public key and private key (keep the secret).
 Start by initializing the API with your keys
 
 ```java
-MarvelApiBuilder.initMarvelApiBuilder(YOUR_PUBLIC_APIKEY, YOUR_PRIVATE_APIKEY);
+MarvelApi.configure()
+    .withApiKeys(YOUR_PUBLIC_APIKEY, YOUR_PRIVATE_APIKEY)
+    .withLogLevel(LogLevel.NONE) // Change log level (Optional)
+    .withConvertor(MY_CONVERTOR) // Change convertor (Optional)
+    .withErrorHandler(MY_ERROR_HANDLER) // Change error handler (Optional)
+    .withEndpoint((MY_ENDPOINT) // Change api endpoint (Optional)
+    .withClient((MY_CLIENT) // Change client (Optional)
+    .init();
 ```
 
 Retrieve the service you want to use
 ```java
+
+// Sync
 CharactersService charactersService = MarvelApiBuilder.getService(CharactersService.class);
 ComicsService comicsService = MarvelApiBuilder.getService(ComicsService.class);
 CreatorsService creatorsService = MarvelApiBuilder.getService(CreatorsService.class);
 EventsService eventsService = MarvelApiBuilder.getService(EventsService.class);
 SeriesService seriesService = MarvelApiBuilder.getService(SeriesService.class);
 StoriesService storiesService = MarvelApiBuilder.getService(StoriesService.class);
+
+// Async
+CharactersAsyncService charactersService = MarvelApiBuilder.getService(CharactersAsyncService.class);
+ComicsAsyncService comicsService = MarvelApiBuilder.getService(ComicsAsyncService.class);
+CreatorsAsyncService creatorsService = MarvelApiBuilder.getService(CreatorsAsyncService.class);
+EventsAsyncService eventsService = MarvelApiBuilder.getService(EventsAsyncService.class);
+SeriesAsyncService seriesService = MarvelApiBuilder.getService(SeriesAsyncService.class);
+StoriesAsyncService storiesService = MarvelApiBuilder.getService(StoriesAsyncService.class);
 ```
 
 Each service offers all the methods available through the API
