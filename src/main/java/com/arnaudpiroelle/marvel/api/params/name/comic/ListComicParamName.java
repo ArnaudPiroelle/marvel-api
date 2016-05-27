@@ -179,7 +179,19 @@ public enum ListComicParamName {
      * Parameter type: query
      * Data type: int
      */
-    OFFSET("offset");
+    OFFSET("offset"),
+
+
+    /**
+     * Description: the title of the comic desired
+     */
+    TITLE("title"),
+
+
+    /**
+     * Description: issue number desired
+     */
+    ISSUE_NUMBER("issueNumber");
 
     private String label;
 
