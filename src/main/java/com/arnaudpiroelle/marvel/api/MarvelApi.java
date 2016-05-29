@@ -75,7 +75,7 @@ public class MarvelApi {
 
         private static final Gson gson = new GsonBuilder()
                 .setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
-                .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
+                //.setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
                 .create();
 
         private LogLevel logLevel= LogLevel.FULL;
